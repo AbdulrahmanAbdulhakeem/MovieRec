@@ -40,8 +40,6 @@ function Home() {
         .then(response => { 
             movies = response.data.result
             setPopular(response.data.results)
-            console.log(movies)
-            // console.log('I think its here')
         })
         .catch(error => {
             const errMsg = error.message
@@ -49,22 +47,9 @@ function Home() {
     } 
     useEffect(() => {
         fetchTrendingContent()
-        // console.log('check it')
     },[])
 
   return (
-    // <ThemeProvider
-    //   theme={createTheme({
-    //     breakpoints: {
-    //       values: {
-    //         laptop: 1024,
-    //         tablet: 640,
-    //         mobile: 0,
-    //         desktop: 1280,
-    //       },
-    //     },
-    //   })}
-    // >
     <Container 
     sx = {myStyles.body}
     >
@@ -88,7 +73,6 @@ function Home() {
         </CardContent>
       </CardActionArea>
     </Card>
-            {/* <div><img src = {`http://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} alt = {movie.title} /></div> */}
           </Grid>
           </Link>
         ))}
