@@ -15,8 +15,11 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
 ### `Setup`
--Add a .env file in the project root directory. And add a REACT_APP_SECRET_KEY variable with your TMDB API Key which you can get one here: <a href = "https://www.themoviedb.org/">TMDB</a>
-`REACT_APP_SECRET_KEY=your_tmdb_api_key_here`
+<ul>
+<li>Add a .env file in the project root directory. And add a REACT_APP_SECRET_KEY variable with your TMDB API Key which you can get one here by simply creating an account: <a href = "https://www.themoviedb.org/">TMDB</a></li>
+</ul>
+
+### REACT_APP_SECRET_KEY=your_tmdb_api_key_here
 
 ### `Perequisite`
 <ul>
