@@ -14,7 +14,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `Prerequisite`
+### `Setup`
+-Add a .env file in the project root directory. And add a REACT_APP_SECRET_KEY variable with your TMDB API Key which you can get one here: <a href = "https://www.themoviedb.org/">TMDB</a>
+`REACT_APP_SECRET_KEY=your_tmdb_api_key_here`
+
+### `Perequisite`
 <ul>
   <li>Create an account if you don't have on TMDB. Because I use its free API to consume movie/tv data.</li>
   <li>And then follow the documentation to create API Key</li>
