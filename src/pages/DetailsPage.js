@@ -11,7 +11,6 @@ function DetailsPage() {
     .then(response => {
       movieDetails = response.data
       setMovieData(movieDetails)
-      console.log(movieData)
     })
     .catch(error => {
       const errMsg = error.message
