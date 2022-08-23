@@ -1,10 +1,8 @@
 export const myStyles = {
     body:{
         margin: '10px 15px 10px 10px',
-        // width: '85%',
         padding: 10,
         boxSizing:'border-box',
-        // fontSize:5
     },
     card: {
         width: 300 , 

@@ -4,7 +4,7 @@ import axios from 'axios'
 
 function Genre() {
     let param = useParams()
-    console.log(process.env.REACT_APP_SECRET_KEY)
+    // console.log(process.env.REACT_APP_SECRET_KEY)
 
     const fetchMovieGenre = () => {
         let movies = []
