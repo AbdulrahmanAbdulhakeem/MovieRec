@@ -15,7 +15,10 @@ function DetailsPage() {
     .then(response => {
       movieDetails = response.data
       setMovieData(movieDetails)
+<<<<<<< HEAD
       setGenre(movieDetails.genres)
+=======
+>>>>>>> cfd20cb006bec5e75c9cf5072c52060edc6f53ed
     })
     .catch(error => {
       const errMsg = error.message
