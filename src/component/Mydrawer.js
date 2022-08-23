@@ -117,7 +117,7 @@ function Mydrawer(props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true, // Better mobile.
           }}
           sx={{
             display: { xs: 'block', sm: 'none' },
