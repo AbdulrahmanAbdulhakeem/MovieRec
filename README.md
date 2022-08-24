@@ -28,4 +28,6 @@ You may also see any lint errors in the console.
   <li>Finally, if you use v3 of TMDB API, create a file named .env.local, and copy and paste the content of .env.example. And then paste the API Key you just . created.</li>
 </ul>
 
+### `Note`
+I could not implement a detailspage for the searchitems due to conflicts between ids which was causing unpredictable results.
 
