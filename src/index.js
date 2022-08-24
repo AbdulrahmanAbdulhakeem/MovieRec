@@ -9,6 +9,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import Genre from './pages/Genre'
 import NoMatch from './pages/NoMatch';
 import DetailsPage from './pages/DetailsPage';
+import SearchResults from './pages/SearchResults';
 
 const darkTheme = createTheme({
   palette: {
@@ -29,6 +30,7 @@ root.render(
       <Route path = '/' element = {<App />} />
       <Route path = '/genre/:genre' element = {<Genre />} />
       <Route path = '/detailspage/:details' element = {<DetailsPage />} />
+      <Route path='/searchresults/:search' element = {<SearchResults />} />
       <Route path = '*' element = {<NoMatch />} />
       {/* <Route path = '/searched/:search' element = {<SearchItem />} /> */}
      </Routes>

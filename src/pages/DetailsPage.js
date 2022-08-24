@@ -11,7 +11,7 @@ function DetailsPage() {
   let param = useParams()
   const fetchMovieById = () => {
     let movieDetails = []
-    axios.get(`https://api.themoviedb.org/3/movie/${param.details}?api_key=${process.env.REACT_APP_SECRET_KEY}&language=en-US`)
+    axios.get(`https://api.themoviedb.org/3/movie/${param.details}?api_key=${process.env.REACT_APP_SECRET_KEY}`)
     .then(response => {
       movieDetails = response.data
       setMovieData(movieDetails)
@@ -25,13 +25,14 @@ function DetailsPage() {
 
   useEffect(() => {
     fetchMovieById()
+    console.log(movieData)
   }, [param.details])
 
   return (
     <Container sx = {myStyles.body}>
           <div className='detail-container'>
             <div className = 'img-container'>
-              <img src = {`http://image.tmdb.org/t/p/w500/${movieData.poster_path}`} alt = {movieData.title} />
+              <img src = {`http://image.tmdb.org/t/p/w500/${movieData.poster_path || movieData.backdrop_path}`} alt = {movieData.title} />
             </div>
           <div className='content-details'>
             <h2>{movieData.title}</h2>

@@ -31,7 +31,12 @@ function Mydrawer(props) {
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
-  };
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    navigate('/searchresults/' + mealSearch)
+  }
 
   const drawer = (
     <div>
@@ -84,7 +89,7 @@ function Mydrawer(props) {
           </IconButton>
           <div className='form-style'>
           <Typography variant="h6" sx = {myStyles.paragraph}><span>Movie </span>Rec</Typography>
-         <form>
+         <form onSubmit = {handleSubmit} >
         <TextField 
         id="input-with-icon-textfield"
         placeholder='Search'
