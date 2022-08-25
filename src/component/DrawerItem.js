@@ -35,4 +35,41 @@ export const DrawerItem = [
         icon:<FaceIcon />,
         route:'/genre/10764'
     },
+    {
+        id:5,
+        label:'Adventure',
+        icon:<FaceIcon />,
+        route:'/genre/12'
+    },
+    {
+        id:6,
+        label:'Comedy',
+        icon:<FaceIcon />,
+        route:'/genre/35'
+    },
+    {
+        id:7,
+        label:'Horror',
+        icon:<FaceIcon />,
+        route:'/genre/27'
+    },
+    {
+        id:8,
+        label:'War',
+        icon:<FaceIcon />,
+        route:'/genre/10752'
+    },
+    {
+        id:9,
+        label:'Western',
+        icon:<FaceIcon />,
+        route:'/genre/37'
+    },
+    {
+        id:10,
+        label:'Crime',
+        icon:<FaceIcon />,
+        route:'/genre/80'
+    },
 ]
+

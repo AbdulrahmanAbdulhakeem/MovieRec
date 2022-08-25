@@ -32,7 +32,7 @@ function DetailsPage() {
     <Container sx = {myStyles.body}>
           <div className='detail-container'>
             <div className = 'img-container'>
-              <img src = {`http://image.tmdb.org/t/p/w500/${movieData.poster_path || movieData.backdrop_path}`} alt = {movieData.title} />
+              <img src = {`http://image.tmdb.org/t/p/w500/${movieData.poster_path ? movieData.poster_path:movieData.backdrop_path}`} alt = {movieData.title} />
             </div>
           <div className='content-details'>
             <h2>{movieData.title}</h2>

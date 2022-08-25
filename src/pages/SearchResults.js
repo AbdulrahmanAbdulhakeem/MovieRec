@@ -9,8 +9,7 @@ import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import { CardActionArea } from '@mui/material'
-import {Link} from 'react-router-dom'
-import {useParams} from 'react-router-dom'
+import {useParams , Link} from 'react-router-dom'
 
 function SearchResults() {
     const [movieData , setMovieData] = useState([])
@@ -32,6 +31,7 @@ function SearchResults() {
 
   useEffect(() => {
     fetchMovieBySearch()
+    
     console.log(param.search)
   }, [param.search])
 
@@ -43,13 +43,14 @@ function SearchResults() {
         <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
         {movieData.map((movie) => (
+          // <Link to = {'/detailspage/' + movie.id} key={movie.id}>
           <Grid item xs={6} md={4}>
             <Card sx={myStyles.card}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="140"
-          image={`http://image.tmdb.org/t/p/w500/${movie.backdrop_path || movie.poster_path}`}
+          image={`http://image.tmdb.org/t/p/w500/${movie.backdrop_path ? movie.backdrop_path : movie.poster_path}`}
           alt= {movie.name}
         />
         <CardContent>
@@ -60,6 +61,7 @@ function SearchResults() {
       </CardActionArea>
     </Card>
           </Grid>
+          // </Link>
         ))}
       </Grid>
     </Box>

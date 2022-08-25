@@ -36,6 +36,7 @@ function Mydrawer(props) {
   const handleSubmit = (e) => {
     e.preventDefault()
     navigate('/searchresults/' + mealSearch)
+    setMealSearch('')
   }
 
   const drawer = (
