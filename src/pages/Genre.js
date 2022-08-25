@@ -18,11 +18,13 @@ function Genre() {
     let param = useParams()
 
     const fetchMovieGenre = () => {
-        
+        let movie = []
         axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_SECRET_KEY}&language=en-US&page=1&with_genres`)
         .then(response => {
           setLoading(false)
-          setMovieData(response.data.results)
+          movie = response.data.results
+          console.log(movie)
+          setMovieData(movie)
         })
         .catch(error => {
           const errMsg = error.message
@@ -46,13 +48,13 @@ function Genre() {
         <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
         {movieData.map((movie) => (
-          <Grid item xs={6} md={4}>
+          <Grid item xs={6} md={4} key = {movie.id}>
             <Card sx={myStyles.card}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="140"
-          image={`http://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
+          image={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
           alt= {movie.name}
         />
         <CardContent>

@@ -45,7 +45,7 @@ function SearchResults() {
         <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
         {movieData.map((movie) => (
-          <Grid item xs={6} md={4}>
+          <Grid item xs={6} md={4} key = {movie.id}>
             <Card sx={myStyles.card}>
       <CardActionArea>
         <CardMedia

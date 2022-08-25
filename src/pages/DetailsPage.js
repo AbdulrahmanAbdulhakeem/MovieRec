@@ -15,8 +15,8 @@ function DetailsPage() {
     axios.get(`https://api.themoviedb.org/3/movie/${param.details}?api_key=${process.env.REACT_APP_SECRET_KEY}`)
     .then(response => {
       setLoading(false)
-      setMovieData(response.data.results)
-      setGenre(response.data.results.genres)
+      setMovieData(response.data)
+      setGenre(response.data.genres)
     })
     .catch(error => {
       const errMsg = error.message
@@ -26,17 +26,14 @@ function DetailsPage() {
 
   useEffect(() => {
     fetchMovieById()
+    console.log(movieData)
   }, [param.details])
 
-  return  loading? (
-    <h2>Loading...</h2>
-) : error ? (
-    <h2>{error}</h2>
-) :(
+  return (
     <Container sx = {myStyles.body}>
           <div className='detail-container'>
             <div className = 'img-container'>
-              <img src = {`http://image.tmdb.org/t/p/w500/${movieData.poster_path ? movieData.poster_path:movieData.backdrop_path}`} alt = {movieData.title} />
+              <img src = {`http://image.tmdb.org/t/p/w500/${movieData.backdrop_path}`} alt = {movieData.title} />
             </div>
           <div className='content-details'>
             <h2>{movieData.title}</h2>
