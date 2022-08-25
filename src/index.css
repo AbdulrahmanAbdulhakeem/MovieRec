@@ -94,7 +94,7 @@ p{
     display: block;
   }
   .container , .App{
-    margin: 0;
+    margin: 2;
   }
   .detail-container {
     margin-left: 230px;
@@ -122,6 +122,10 @@ p{
   body{
     display: block;
   }
+  .container , .App{
+    margin: 0;
+  }
+
   .detail-container {
     margin-left: 20px;
     width: 100%;
