@@ -43,4 +43,3 @@ export const DrawerItem = [
         route:'/genre/12'
     },
 ]
-

@@ -16,9 +16,6 @@ code {
   grid-template-columns: auto auto auto;
   margin:0px 0px 10px 250px;
   padding:1px;
-  /* font-size: 200px;
-  color: fuchsia; */
-  /* margin-left: 250px; */
 }
 
 .form-style{
@@ -32,17 +29,12 @@ code {
   margin:0px 0px 10px 250px;
   width: 80%;
   height: 75%;
-  /* background-color: #333;
-  opacity: 0.9; */
-  /* justify-content: center;
-  align-items: center; */
 }
 
 
 .img-container{
   margin-top: 10px;
   margin-right: 1rem;
-  /* border-radius: 1rem; */
   height: 100%;
 }
 
@@ -79,7 +71,6 @@ span{
 img{
   max-width:400px;
   max-height: 500px;
-  /* border-radius: 1rem; */
 }
 
 a{
@@ -89,7 +80,6 @@ a{
 h2,p{
   padding: 0;
   margin: 0;
-  /* display: inline-block; */
 }
 
 h2{

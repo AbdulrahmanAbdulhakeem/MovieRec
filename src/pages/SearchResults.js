@@ -43,7 +43,6 @@ function SearchResults() {
         <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
         {movieData.map((movie) => (
-          // <Link to = {'/detailspage/' + movie.id} key={movie.id}>
           <Grid item xs={6} md={4}>
             <Card sx={myStyles.card}>
       <CardActionArea>
@@ -61,7 +60,6 @@ function SearchResults() {
       </CardActionArea>
     </Card>
           </Grid>
-          // </Link>
         ))}
       </Grid>
     </Box>

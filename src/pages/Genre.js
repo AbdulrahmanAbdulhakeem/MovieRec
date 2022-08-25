@@ -9,12 +9,11 @@ import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import { CardActionArea } from '@mui/material'
-import {Link , useParams} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 
 function Genre() {
     const [movieData , setMovieData] = useState([])
     let param = useParams()
-    // console.log(process.env.REACT_APP_SECRET_KEY)
 
     const fetchMovieGenre = () => {
         let movies = []
@@ -24,7 +23,6 @@ function Genre() {
             movies = response.data.results
             setMovieData(response.data.results)
             console.log(movies)
-            // console.log('I think its here')
         })
         .catch(error => {
             const errMsg = error.message
@@ -32,7 +30,6 @@ function Genre() {
     }
 
     useEffect(() => {
-        // console.log(param.genre)
         fetchMovieGenre()
     },[param.genre])
 
@@ -44,7 +41,6 @@ function Genre() {
         <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
         {movieData.map((movie) => (
-        //   <Link to = {'/detailspage/' + movie.id} key={movie.id}>
           <Grid item xs={6} md={4}>
             <Card sx={myStyles.card}>
       <CardActionArea>
@@ -62,7 +58,6 @@ function Genre() {
       </CardActionArea>
     </Card>
           </Grid>
-        //   {/* </Link> */}
         ))}
       </Grid>
     </Box>
