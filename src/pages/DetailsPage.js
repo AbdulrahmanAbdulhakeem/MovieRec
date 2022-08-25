@@ -7,28 +7,32 @@ import {useParams} from 'react-router-dom'
 function DetailsPage() {
   const [movieData , setMovieData] = useState([])
   const [genre , setGenre] = useState([])
+  const [loading , setLoading] = useState(true)
+  const [error , setError] = useState('')
 
   let param = useParams()
   const fetchMovieById = () => {
-    let movieDetails = []
     axios.get(`https://api.themoviedb.org/3/movie/${param.details}?api_key=${process.env.REACT_APP_SECRET_KEY}`)
     .then(response => {
-      movieDetails = response.data
-      setMovieData(movieDetails)
-      setGenre(movieDetails.genres)
+      setLoading(false)
+      setMovieData(response.data.results)
+      setGenre(response.data.results.genres)
     })
     .catch(error => {
       const errMsg = error.message
-      return errMsg
+      setError(errMsg)
   })
   }
 
   useEffect(() => {
     fetchMovieById()
-    console.log(movieData)
   }, [param.details])
 
-  return (
+  return  loading? (
+    <h2>Loading...</h2>
+) : error ? (
+    <h2>{error}</h2>
+) :(
     <Container sx = {myStyles.body}>
           <div className='detail-container'>
             <div className = 'img-container'>

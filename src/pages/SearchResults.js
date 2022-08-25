@@ -13,19 +13,22 @@ import {useParams , Link} from 'react-router-dom'
 
 function SearchResults() {
     const [movieData , setMovieData] = useState([])
+    const [loading , setLoading] = useState(true)
+    const [error , setError] = useState('')
 
     let param = useParams()
   const fetchMovieBySearch = () => {
     let movieDetails = []
     axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_SECRET_KEY}&language=en-US&page=1&with_text_query=${param.search}`)
     .then(response => {
+      setLoading(false)
       movieDetails = response.data.results
       console.log(movieDetails)
       setMovieData(movieDetails)
     })
     .catch(error => {
       const errMsg = error.message
-      return errMsg
+      setError(errMsg)
   })
   }
 
@@ -35,7 +38,11 @@ function SearchResults() {
     console.log(param.search)
   }, [param.search])
 
-  return (
+  return loading ? (
+    <h2>Loading...</h2>
+) : error ? (
+    <h2>{error}</h2>
+) :(
     <div className="container">
         <Container 
     sx = {myStyles.body}

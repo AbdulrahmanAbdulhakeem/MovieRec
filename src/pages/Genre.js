@@ -13,19 +13,20 @@ import {useParams} from 'react-router-dom'
 
 function Genre() {
     const [movieData , setMovieData] = useState([])
+    const [loading , setLoading] = useState(true)
+    const [error , setError] = useState('')
     let param = useParams()
 
     const fetchMovieGenre = () => {
-        let movies = []
         
         axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_SECRET_KEY}&language=en-US&page=1&with_genres`)
         .then(response => {
-            movies = response.data.results
-            setMovieData(response.data.results)
-            console.log(movies)
+          setLoading(false)
+          setMovieData(response.data.results)
         })
         .catch(error => {
-            const errMsg = error.message
+          const errMsg = error.message
+          setError(errMsg)
         })
     }
 
@@ -33,7 +34,11 @@ function Genre() {
         fetchMovieGenre()
     },[param.genre])
 
-  return (
+  return loading ? (
+    <h2>Loading...</h2>
+) : error ? (
+    <h2>{error}</h2>
+) :(
     <div className='container'>
         <Container 
     sx = {myStyles.body}

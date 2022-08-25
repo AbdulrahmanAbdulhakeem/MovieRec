@@ -13,22 +13,29 @@ import {Link} from 'react-router-dom'
 
 function Home() {
     const [popular , setPopular] = useState([])
+    const [loading , setLoading] = useState(true)
+    const [error , setError] = useState('')
 
     const fetchTrendingContent = () => {
         axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_SECRET_KEY}&language=en-US&page=1`)        
         .then(response => { 
-            setPopular(response.data.results)
+          setLoading(false)
+          setPopular(response.data.results)
         })
         .catch(error => {
-            const errMsg = error.message
-            return errMsg
+          const errMsg = error.message
+          setError(errMsg) 
         })
     } 
     useEffect(() => {
-        fetchTrendingContent()
+      fetchTrendingContent()
     },[])
 
-  return (
+  return loading ? (
+    <h2>Loading...</h2>
+) : error ? (
+    <h2>{error}</h2>
+) :(
     <Container 
     sx = {myStyles.body}
     >
