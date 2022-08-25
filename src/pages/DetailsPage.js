@@ -26,10 +26,13 @@ function DetailsPage() {
 
   useEffect(() => {
     fetchMovieById()
-    console.log(movieData)
   }, [param.details])
 
-  return (
+  return loading ? (
+    <h2>Loading...</h2>
+) : error ? (
+    <h2>{error}</h2>
+) :(
     <Container sx = {myStyles.body}>
           <div className='detail-container'>
             <div className = 'img-container'>
