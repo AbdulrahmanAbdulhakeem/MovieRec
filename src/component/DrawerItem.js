@@ -3,6 +3,7 @@ import ChildCareSharpIcon from '@mui/icons-material/ChildCareSharp'
 import AllInclusiveSharpIcon from '@mui/icons-material/AllInclusiveSharp'
 import WhatshotIcon from '@mui/icons-material/Whatshot'
 import FaceIcon from '@mui/icons-material/Face';
+import AnchorIcon from '@mui/icons-material/Anchor';
 
 export const DrawerItem = [
     {
@@ -38,38 +39,8 @@ export const DrawerItem = [
     {
         id:5,
         label:'Adventure',
-        icon:<FaceIcon />,
+        icon:<AnchorIcon />,
         route:'/genre/12'
-    },
-    {
-        id:6,
-        label:'Comedy',
-        icon:<FaceIcon />,
-        route:'/genre/35'
-    },
-    {
-        id:7,
-        label:'Horror',
-        icon:<FaceIcon />,
-        route:'/genre/27'
-    },
-    {
-        id:8,
-        label:'War',
-        icon:<FaceIcon />,
-        route:'/genre/10752'
-    },
-    {
-        id:9,
-        label:'Western',
-        icon:<FaceIcon />,
-        route:'/genre/37'
-    },
-    {
-        id:10,
-        label:'Crime',
-        icon:<FaceIcon />,
-        route:'/genre/80'
     },
 ]
 
