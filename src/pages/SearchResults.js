@@ -9,7 +9,7 @@ import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import { CardActionArea } from '@mui/material'
-import {useParams , Link} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 
 function SearchResults() {
     const [movieData , setMovieData] = useState([])
@@ -17,14 +17,11 @@ function SearchResults() {
     const [error , setError] = useState('')
 
     let param = useParams()
-  const fetchMovieBySearch = () => {
-    let movieDetails = []
+    const fetchMovieBySearch = () => {
     axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_SECRET_KEY}&language=en-US&page=1&with_text_query=${param.search}`)
     .then(response => {
       setLoading(false)
-      movieDetails = response.data.results
-      console.log(movieDetails)
-      setMovieData(movieDetails)
+      setMovieData(response.data.results)
     })
     .catch(error => {
       const errMsg = error.message
@@ -34,8 +31,6 @@ function SearchResults() {
 
   useEffect(() => {
     fetchMovieBySearch()
-    
-    console.log(param.search)
   }, [param.search])
 
   return loading ? (
