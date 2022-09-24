@@ -3,6 +3,7 @@ import Container from '@mui/material/Container'
 import {myStyles} from '../component/MyStyles'
 import axios from 'axios'
 import {useParams} from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 function DetailsPage() {
   const [movieData , setMovieData] = useState([])
@@ -33,6 +34,12 @@ function DetailsPage() {
 ) : error ? (
     <h2>{error}</h2>
 ) :(
+  <motion.div
+    animate={{opacity:1}}
+    initial={{opacity:0}}
+    exit={{opacity:0}}
+    transition={{duration:1}}
+    >
     <Container sx = {myStyles.body}>
           <div className='detail-container'>
             <div className = 'img-container'>
@@ -69,7 +76,7 @@ function DetailsPage() {
             </div>
           </div>
     </Container>
-     
+     </motion.div>
   )
 }
 

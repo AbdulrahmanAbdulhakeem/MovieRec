@@ -10,6 +10,7 @@ import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import { CardActionArea } from '@mui/material'
 import {Link} from 'react-router-dom'
+import {motion} from 'framer-motion'
 
 function Home() {
     const [popular , setPopular] = useState([])
@@ -36,6 +37,12 @@ function Home() {
 ) : error ? (
     <h2>{error}</h2>
 ) :(
+  <motion.div
+    animate={{opacity:1}}
+    initial={{opacity:0}}
+    exit={{opacity:0}}
+    transition={{duration:1}}
+    >
     <Container 
     sx = {myStyles.body}
     >
@@ -65,6 +72,7 @@ function Home() {
       </Grid>
     </Box>
     </Container>
+    </motion.div>
   )
 }
 

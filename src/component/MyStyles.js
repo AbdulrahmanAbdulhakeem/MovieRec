@@ -3,6 +3,8 @@ export const myStyles = {
         margin: '10px 15px 10px 10px',
         padding: 10,
         boxSizing:'border-box',
+        // overflow:'hidden',
+        // wordWrap: 'break-word',
     },
     card: {
         width: 300 , 

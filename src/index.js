@@ -10,6 +10,7 @@ import Genre from './pages/Genre'
 import NoMatch from './pages/NoMatch';
 import DetailsPage from './pages/DetailsPage';
 import SearchResults from './pages/SearchResults';
+import { AnimatePresence } from 'framer-motion';
 
 const darkTheme = createTheme({
   palette: {
@@ -26,6 +27,7 @@ root.render(
       <CssBaseline />
 
     <Mydrawer />
+    <AnimatePresence exitBeforeEnter>
     <Routes>
       <Route path = '/' element = {<App />} />
       <Route path = '/genre/:genre' element = {<Genre />} />
@@ -33,6 +35,7 @@ root.render(
       <Route path='/searchresults/:search' element = {<SearchResults />} />
       <Route path = '*' element = {<NoMatch />} />
      </Routes>
+     </AnimatePresence>
     </ThemeProvider>
       </div>
     </BrowserRouter>

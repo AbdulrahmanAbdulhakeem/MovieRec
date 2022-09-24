@@ -10,6 +10,7 @@ import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 import { CardActionArea } from '@mui/material'
 import {useParams} from 'react-router-dom'
+import {motion} from 'framer-motion'
 
 function SearchResults() {
     const [movieData , setMovieData] = useState([])
@@ -38,6 +39,12 @@ function SearchResults() {
 ) : error ? (
     <h2>{error}</h2>
 ) :(
+  <motion.div
+    animate={{opacity:1}}
+    initial={{opacity:0}}
+    exit={{opacity:0}}
+    transition={{duration:1}}
+    >
     <div className="container">
         <Container 
     sx = {myStyles.body}
@@ -67,6 +74,7 @@ function SearchResults() {
     </Box>
     </Container>
     </div>
+    </motion.div>
   )
 }
 

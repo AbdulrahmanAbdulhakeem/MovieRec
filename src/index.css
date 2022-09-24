@@ -42,6 +42,7 @@ code {
   height: 100%;
 }
 
+
 .style-genre{
   display: flex;
 }
@@ -70,7 +71,8 @@ span{
 
 img{
   max-width:400px;
-  max-height: 500px;
+  max-height: 100%;
+  object-fit: cover;
 }
 
 a{
@@ -92,17 +94,26 @@ p{
 @media(max-width: 800px) {
   body{
     display: block;
+    overflow-x: hidden;
+    width: 75%;
   }
   .container , .App{
     margin: 2;
   }
   .detail-container {
     margin-left: 230px;
-    width: 50%;
+    width: 70%;
     display: block;
   }
   .box-container{
     display: block;
+  }
+  .content-detail p{
+    word-wrap: break-word;
+  }
+  .img-container img{
+    width: 400px;
+    border-radius: 5px;
   }
 }
 
@@ -115,6 +126,9 @@ p{
   }
   .box-container{
     display: block;
+  }
+  .content-detail p{
+    word-wrap: break-word;
   }
 }
 
@@ -129,5 +143,14 @@ p{
   .detail-container {
     margin-left: 20px;
     width: 100%;
+  }
+
+  .content-detail p{
+    word-wrap: break-word;
+  }
+
+  .img-container img{
+    width: 300px;
+    border-radius: 5px;
   }
 }
